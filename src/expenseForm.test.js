@@ -7,7 +7,7 @@ test("renders learn react link", () => {
   expect(linkElement).toBeInTheDocument();
 });
 
-test("renders learn react link", () => {
+test("renders learn react", () => {
   render(<ExpenseForm />);
   const colorButton = screen.getByRole("button", { name: "Add Expense" });
   // this only worked after putting the semi-colon after the color, watch for that
