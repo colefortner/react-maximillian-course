@@ -3,15 +3,7 @@ import "./ExpensesFilter.css";
 const ExpenseFilter = (props) => {
   const dropdownChangeHandler = (event) => {
     props.onChangeFilter(event.target.value);
-    // const year = { year: selectedYear };
-    // props.onSelectYear(year);
   };
-
-  // const submitHandler = (event) => {
-  //   event.preventDefault();
-
-  //   const year = { year: selectedYear };
-  // };
 
   return (
     <div className="expenses-filter">

@@ -42,12 +42,6 @@ function App() {
       <Expenses data={expenses} />
     </div>
   );
-  //   return React.createElement(
-  //     "div",
-  //     {},
-  //     React.createElement("h2", {}, "Let's get started!"),
-  //     React.createElement(Expenses, { data: expenses })
-  //   );
 }
 
 export default App;
