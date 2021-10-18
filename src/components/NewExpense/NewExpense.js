@@ -3,7 +3,7 @@ import ExpenseForm from "./ExpenseForm";
 import "./NewExpense.css";
 
 const NewExpense = (props) => {
-  const [formState, setFormState] = useState("hidden");
+  const [isEditing, setIsEditing] = useState(false);
   const saveExpenseDataHandler = (enteredExpenseData) => {
     const expenseData = {
       ...enteredExpenseData,
@@ -11,18 +11,18 @@ const NewExpense = (props) => {
     };
 
     props.onAddExpense(expenseData);
-    formVisibilityHandler();
+    startEditingHandler();
   };
 
-  const formVisibilityHandler = () => {
-    formState === "hidden" ? setFormState("visible") : setFormState("hidden");
+  const startEditingHandler = () => {
+    setIsEditing(!isEditing);
   };
 
   return (
     <div className="new-expense">
-      {formState === "hidden" ? (
+      {!isEditing ? (
         <div className="new-expense__actions">
-          <button type="submit" onClick={formVisibilityHandler}>
+          <button type="submit" onClick={startEditingHandler}>
             Add Expense
           </button>
         </div>
@@ -30,7 +30,7 @@ const NewExpense = (props) => {
         <div>
           <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
           <div className="new-expense__actions">
-            <button type="submit" onClick={formVisibilityHandler}>
+            <button type="submit" onClick={startEditingHandler}>
               Cancel
             </button>
           </div>
